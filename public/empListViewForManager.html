@@ -1,0 +1,44 @@
+
+<div  ng-controller="empMGRlistCtrl">
+
+<center>
+  <div>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Email</th>
+        <th>PhoneNumber</th>
+      </tr>
+    </thead>
+    <tbody class="list" ng-repeat="list in result">
+      <tr>
+        <td>{{list.fname}}</td>
+        <td>{{list._id}}</td>
+        <td>{{list.phonenumber}}</td>
+		 <td class="edit"><button class="edit-item-btn" ng-click="edit(list._id)">Edit</button></td>
+      </tr>
+     
+    </tbody>
+  </table>
+ </center>
+ <div  id="empList" style="display:none">
+
+ <table class="table table-striped">
+  <tbody class="list" ng-repeat="list1 in result1">
+      <tr>
+        <td>{{list1.fname}}</td>
+        <td>{{list1._id}}</td>
+        <td>{{list1.phonenumber}}</td>
+
+      </tr>
+     
+      
+    </tbody>
+  </table>
+
+</div>
+
+</div>
+
+

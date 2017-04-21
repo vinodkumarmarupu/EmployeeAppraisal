@@ -1,0 +1,308 @@
+<!doctype html>
+<html>
+
+<!-- Mirrored from lab.westilian.com/matmix-admin/list-view/advanced-form-elements.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 12 Apr 2017 08:04:21 GMT -->
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="A Components Mix Bootstarp 3 Admin Dashboard Template">
+<meta name="author" content="Westilian">
+<title>MatMix - A Components Mix Admin Dashboard Template</title>
+<link rel="stylesheet" href="css/font-awesome.css" type="text/css">
+<link rel="stylesheet" href="css/bootstrap.css" type="text/css">
+<link rel="stylesheet" href="css/animate.css" type="text/css">
+<link rel="stylesheet" href="css/waves.css" type="text/css">
+<link rel="stylesheet" href="css/layout.css" type="text/css">
+<link rel="stylesheet" href="css/components.css" type="text/css">
+<link rel="stylesheet" href="css/plugins.css" type="text/css">
+<link rel="stylesheet" href="css/common-styles.css" type="text/css">
+<link rel="stylesheet" href="css/pages.css" type="text/css">
+<link rel="stylesheet" href="css/responsive.css" type="text/css">
+<link rel="stylesheet" href="css/matmix-iconfont.css" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=Roboto:400,300,400italic,500,500italic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,400,600" rel="stylesheet" type="text/css">
+</head>
+<body ng-app="myApp" ng-controller="appraisalFormempCtrl as vm">
+<div class="page-container list-menu-view">
+<!--Leftbar Start Here -->
+<div class="left-aside desktop-view">
+    <div class="aside-branding">
+        <a href="index.html" class="iconic-logo"><img src="images/logo-iconic.png" alt="Matmix Logo">
+        </a>
+        <a href="index.html" class="large-logo"><img src="images/logo-large.png" alt="Matmix Logo">
+        </a><span class="aside-pin waves-effect"><i class="fa fa-thumb-tack"></i></span>
+        <span class="aside-close waves-effect"><i class="fa fa-times"></i></span>
+    </div>
+        <div class="left-navigation">
+        <ul class="list-accordion">
+            <li><a href="#" class="waves-effect"><span class="nav-icon"><i class="fa fa-home"></i></span><span class="nav-label">Home</span></a>
+                
+            </li>
+        
+               
+            </li>
+			 <li><a href="appraisalFormemp.html" class="waves-effect"><span class="nav-icon"><i class="fa fa-align-justify"></i></span><span class="nav-label">Self Appraisal Form</span></a>
+                
+            </li>
+					
+            
+			
+        </ul>
+    </div>
+</div>
+	<div class="page-content">
+    <!--Topbar Start Here -->
+    <header class="top-bar">
+        <div class="container-fluid top-nav">
+           
+            <div class="row">
+                <div class="col-md-2">
+                    <div class="clearfix top-bar-action">
+                        <span class="leftbar-action-mobile waves-effect"><i class="fa fa-bars "></i></span>
+                        <span class="leftbar-action desktop waves-effect"><i class="fa fa-bars "></i></span>
+						<span class="waves-effect search-btn mobile-search-btn">
+						<i class="fa fa-search"></i>
+						</span>
+                        <span class="rightbar-action waves-effect"><i class="fa fa-bars"></i></span>
+                    </div>
+                </div>
+                <div class="col-md-4 responsive-fix top-mid">
+                    
+                    
+                </div>
+                <div class="col-md-6 responsive-fix">
+                    <div class="top-aside-right">
+                        <div class="user-nav">
+                            <ul>
+                                <li class="dropdown">
+                                    <a data-toggle="dropdown" href="#" class="clearfix dropdown-toggle waves-effect waves-block waves-classic">
+                                        <span class="user-info">Westilian Jaman <cite>jaman@mymail.com</cite></span>
+                                        <span class="user-thumb"><img src="images/avatar/jaman.jpg" alt="image"></span>
+                                    </a>
+                                    <ul role="menu" class="dropdown-menu fadeInUp">
+                                        
+                                        <li><a href="#"><span class="user-nav-icon"><i class="fa fa-user"></i></span><span class="user-nav-label">Profile Update</span></a>
+                                        </li>
+                                        
+                                        <li><a href="login.html"><span class="user-nav-icon"><i class="fa fa-lock"></i></span><span class="user-nav-label">Logout</span></a>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                       
+                        <span class="rightbar-action waves-effect"><i class="fa fa-bars"></i></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+		<div class="main-container">
+			<div class="container-fluid">
+				<div class="page-breadcrumb">
+					<div class="row">
+						<div class="col-md-7">
+							<div class="page-breadcrumb-wrap">
+								<div class="page-breadcrumb-info">
+									<h2 class="breadcrumb-titles">Self Appraisal Form</h2>
+									
+								</div>
+							</div>
+						</div>
+						
+					</div>
+				</div>
+				
+				<div class="row">
+                            <div class="col-md-12">
+                           
+                            <div class="box-widget widget-module">
+                                <div class="widget-head clearfix">
+                                   
+                                    <h4>Part A - Basic Information</h4>
+                                </div>
+                                <div class="widget-container">
+                                    <div class=" widget-block">
+                                        <form class="form-horizontal">
+                                            <div class="form-group">
+											<label class="col-md-4 control-label">Email:</label>
+											<div class="col-md-8">
+												<input type="text" ng-model="vm.apemail" class="form-control"/>
+											</div>
+										</div>
+                                              <div class="form-group">
+											<label class="col-md-4 control-label">Name:</label>
+											<div class="col-md-8">
+												<input type="text" ng-model="vm.apname" class="form-control"/>
+											</div>
+										</div>
+                                             <div class="form-group">
+											<label class="col-md-4 control-label">Designation:</label>
+											<div class="col-md-8">
+												<input type="text" ng-model="vm.apdesignation" class="form-control"/>
+											</div>
+										</div>
+                                             <div class="form-group">
+											<label class="col-md-4 control-label">Month:</label>
+											<div class="col-md-8">
+												<input type="text" ng-model="vm.apmonth" class="form-control"/>
+											</div>
+										</div>
+                                             <div class="form-group">
+											<label class="col-md-4 control-label">Time in this Position:</label>
+											<div class="col-md-8">
+												<input type="text" ng-model="vm.aptimeInposition" class="form-control"/>
+											</div>
+										</div>
+                                            <div class="form-group">
+                                            <label class="col-md-4 control-label" for="ccomment">TrainingDetails:</label>
+											
+                                            <div class="col-md-8">
+                                                <textarea class="form-control" ng-model="vm.aptrDetails" placeholder="TrainingDetails" id="ccomment" name="comment" required></textarea>
+                                            </div>
+                                        </div>
+                                          <div class="form-group">
+                                            <label class="col-md-4 control-label" for="ccomment">Projects:</label>
+											
+                                            <div class="col-md-8">
+                                                <textarea class="form-control" ng-model="vm.approjects" placeholder="Projects" id="ccomment" name="comment" required></textarea>
+                                            </div>
+                                        </div>
+                                            
+                                    
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        </div>
+				
+				
+				<div class="row">
+					<div class="col-md-12">
+					
+						
+                        <div class="row">
+                            <div class="col-md-12">
+                           
+                            <div class="box-widget widget-module">
+                                <div class="widget-head clearfix">
+                                   
+                                    <h4>Part B - Employee’s Assessment</h4>
+                                </div>
+                                <div class="widget-container">
+                                    <div class=" widget-block">
+                                        <form class="form-horizontal">
+                                           
+                                            
+                                             <div class="form-group">
+                                            <label class="col-md-4 control-label" for="ccomment">Responsibility:</label>
+											
+                                            <div class="col-md-8">
+                                                <textarea class="form-control"  ng-model="vm.apresponsibilities" placeholder="Responsibility" id="ccomment" name="comment" required></textarea>
+                                            </div>
+                                        </div>
+                                            <div class="form-group">
+                                            <label class="col-md-4 control-label" for="ccomment">DifficultyInterest:</label>
+											
+                                            <div class="col-md-8">
+                                                <textarea class="form-control" ng-model="vm.apdfInterest" placeholder="DifficultyInterest" id="ccomment" name="comment" required></textarea>
+                                            </div>
+                                        </div>
+                                             <div class="form-group">
+                                            <label class="col-md-4 control-label" for="ccomment">Achievements:</label>
+											
+                                            <div class="col-md-8">
+                                                <textarea class="form-control" ng-model="vm.apachievements" placeholder="Achievements" id="ccomment" name="comment" required></textarea>
+                                            </div>
+                                        </div>
+                                    
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        </div>
+						
+					</div>
+<div class="form-group">
+                       <label class="col"></label>
+					         <div class="col">
+									<button class="btn btn-info " type="submit" ng-click="vm.register()">Submit</button>
+									<button class="btn btn-info " type="submit" ng-click="vm.finalSubmit()">FinalSubmit</button>
+							 </div>
+			</div>
+				</div>
+				
+			</div>
+			
+		</div>
+    <!--Footer Start Here -->
+    <footer class="footer-container">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-6 col-sm-6">
+                    <div class="footer-left">
+                        <span>&copy; 2015 <a href="http://themeforest.net/user/westilian">westilian</a></span>
+                    </div>
+                </div>
+                <div class="col-md-6 col-sm-6">
+                    <div class="footer-right">
+                        <span class="footer-meta">Crafted with&nbsp;<i class="fa fa-heart"></i>&nbsp;by&nbsp;<a href="http://themeforest.net/user/westilian">westilian</a></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+	</div>
+</div>
+<!--Rightbar Start Here -->
+
+</div>
+
+</div>
+<script src="js/jquery-1.11.2.min.js"></script>
+<script src="js/jquery-migrate-1.2.1.min.js"></script>
+<!--Load Mask-->
+<script src="js/jquery.loadmask.js"></script>
+<script src="js/jRespond.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/nav-accordion.js"></script>
+<script src="js/hoverintent.js"></script>
+<!--Materialize Effect-->
+<script src="js/waves.js"></script>
+<!--iCheck-->
+<script src="js/icheck.js"></script>
+<!--Select2-->
+<script src="js/select2.js"></script>
+<!--jquery.mentionsInput-->
+<script src="js/underscore.js"></script>
+<script src="js/jquery.elastic.js"></script>
+<script src="js/jquery.events.input.js"></script>
+<script src="js/jquery.mentionsInput.js"></script>
+<!--Text Editor-->
+<script src="js/summernote.min.js"></script>
+<!--CHARTS-->
+<script src="js/chart/sparkline/jquery.sparkline.js"></script>
+<script src="js/chart/easypie/jquery.easypiechart.min.js"></script>
+<!--Smart Resize-->
+<script src="js/smart-resize.js"></script>
+<!--Forms Plugins-->
+<script src="js/jquery.tagsinput.js"></script>
+<script src="js/jquery.mask.js"></script>
+<script src="js/jquery.bootstrap-touchspin.js"></script>
+<script src="js/bootstrap-filestyle.js"></script>
+<script src="js/selectize.js"></script>
+<!--Layout Initialize-->
+<script src="js/layout.init.js"></script>
+<!--Template Plugins Initialize-->
+<script src="js/matmix.init.js"></script>
+<!--High Resolution Ready-->
+<script src="js/retina.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<script src="Controllers/appraisalFormempCtrl.js"></script>
+</body>
+
+<!-- Mirrored from lab.westilian.com/matmix-admin/list-view/advanced-form-elements.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 12 Apr 2017 08:04:23 GMT -->
+</html>

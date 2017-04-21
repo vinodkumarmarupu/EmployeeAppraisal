@@ -1,0 +1,253 @@
+<!doctype html>
+<html>
+
+<!-- Mirrored from lab.westilian.com/matmix-admin/list-view/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 12 Apr 2017 08:04:08 GMT -->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="A Components Mix Bootstarp 3 Admin Dashboard Template">
+    <meta name="author" content="Westilian">
+    <title>MatMix - A Components Mix Admin Dashboard Template</title>
+    <link rel="stylesheet" href="css/font-awesome.css" type="text/css">
+    <link rel="stylesheet" href="css/bootstrap.css" type="text/css">
+    <link rel="stylesheet" href="css/animate.css" type="text/css">
+    <link rel="stylesheet" href="css/waves.css" type="text/css">
+    <link rel="stylesheet" href="css/layout.css" type="text/css">
+    <link rel="stylesheet" href="css/components.css" type="text/css">
+    <link rel="stylesheet" href="css/plugins.css" type="text/css">
+    <link rel="stylesheet" href="css/common-styles.css" type="text/css">
+    <link rel="stylesheet" href="css/pages.css" type="text/css">
+    <link rel="stylesheet" href="css/responsive.css" type="text/css">
+    <link rel="stylesheet" href="css/matmix-iconfont.css" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Roboto:400,300,400italic,500,500italic" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,400,600" rel="stylesheet" type="text/css">
+</head>
+<body  ng-app="myApp" class="login-page" ng-controller="indexempCtrl as vm">
+<div class="page-container list-menu-view">
+<!--Leftbar Start Here -->
+<div class="left-aside desktop-view">
+    <div class="aside-branding">
+        <a href="index.html" class="iconic-logo"><img src="images/logo-iconic.png" alt="Matmix Logo">
+        </a>
+        <a href="index.html" class="large-logo"><img src="images/logo-large.png" alt="Matmix Logo">
+        </a><span class="aside-pin waves-effect"><i class="fa fa-thumb-tack"></i></span>
+        <span class="aside-close waves-effect"><i class="fa fa-times"></i></span>
+    </div>
+    <div class="left-navigation">
+        <ul class="list-accordion">
+            <li><a href="#" class="waves-effect"><span class="nav-icon"><i class="fa fa-home"></i></span><span class="nav-label">Home</span></a>
+                
+            </li>              
+            </li>
+			 <li ng-hide="value"><a href="appraisalFormemp.html" class="waves-effect"><span class="nav-icon"><i class="fa fa-align-justify"></i></span><span class="nav-label">Self Appraisal Form</span></a>
+                
+            </li>
+			
+        </ul>
+    </div>
+</div>
+<div class="page-content">
+<!--Topbar Start Here -->
+<header class="top-bar">
+    <div class="container-fluid top-nav">
+        <div class="search-form search-bar">
+            <form>
+                <input name="searchbox" value="" placeholder="Search Topic..." class="search-input">
+            </form>
+            <span class="search-close waves-effect"><i class="ico-cross"></i></span>
+        </div>
+        <div class="row">
+            <div class="col-md-2">
+                <div class="clearfix top-bar-action">
+                    <span class="leftbar-action-mobile waves-effect"><i class="fa fa-bars "></i></span>
+                    <span class="leftbar-action desktop waves-effect"><i class="fa fa-bars "></i></span>
+						
+                    <span class="rightbar-action waves-effect"><i class="fa fa-bars"></i></span>
+                </div>
+            </div>
+          
+            <div class="col responsive-fix">
+                <div class="top-aside-right">
+                    <div class="user-nav">
+                        <ul>
+                            <li class="dropdown">
+                                <a data-toggle="dropdown" href="#" class="clearfix dropdown-toggle waves-effect waves-block waves-classic">
+                                    <span class="user-info">username <cite>{{yourmail}}</cite></span>
+                                    <span class="user-thumb"><img src="images/avatar/jaman.jpg" alt="image"></span>
+                                </a>
+                                <ul role="menu" class="dropdown-menu fadeInUp">
+                                    
+                                    <li><a href="#" class="waves-effect"><span class="nav-icon"><i class="fa fa-user"></i></span><span class="nav-label">Profile Update</span></a>
+            
+            </li>
+                                    
+                                    <li><a href="login.html"><span class="user-nav-icon"><i class="fa fa-lock"></i></span><span class="user-nav-label">Logout</span></a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <span class="rightbar-action waves-effect"><i class="fa fa-bars"></i></span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+<div class="main-container">
+			<div class="container-fluid">
+				<div class="page-breadcrumb">
+					<div class="row">
+						<div class="col-md-7">
+							<div class="page-breadcrumb-wrap">
+								<div class="page-breadcrumb-info">
+									<h2 class="breadcrumb-titles">UI Widgets <small>All small widgets</small></h2>
+									<ul class="list-page-breadcrumb">
+										<li><a href="#">Home</a>
+										</li>
+										<li class="active-page"> UI Widgets</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-5">
+						</div>
+					</div>
+				</div>
+               
+				
+				
+				
+				<div class="row">
+					<div class="col">
+						<div class="w-info-graph">
+							<div class="row">
+								
+								<div class="col-md-12">
+									<div class="w-info-chart-meta">
+										<!-- <h2>Status of your Appraisal</h2>
+										<div class="progress-wrap">
+											<div class="clearfix progress-meta">
+												<span class="pull-left progress-label">Appraisal Status</span><span class="pull-right progress-percent label label-info"></span>
+											</div>
+											<div class="progress" style="width:{{empvalue}}%;background-color:blue;">
+												<div class="progress-bar progress-bar-info" data-progress={{empvalue}}>
+												</div>
+											</div>
+										</div> -->
+										
+										
+										
+										
+										
+										
+		<div class="row">
+        <div class="col-md-12 col-sm-12">
+            <div class="iconic-w-wrap number-rotate">
+                <span class="stat-w-title">Appraisal status</span>
+                <a href="#" class="ico-cirlce-widget w_bg_cyan">
+                    <span><i class="ico-users"></i></span>
+                </a>
+                <div class="w-meta-info">
+                    <span class="w-meta-value number-animate"  data-animation-duration="1500">{{empvalue}}%</span>
+                   
+                  
+                </div>
+            </div>
+        </div>
+
+       
+     
+    </div>
+	<center>note</center>
+	<div class="mini-chart-list">
+											<ul>
+											<li>
+												<span  class="epie-chart" data-percent="25" data-barcolor="#00acc1" data-tcolor="#e0e0e0" data-scalecolor="#e0e0e0" data-linecap="butt" data-linewidth="3" data-size="80" data-animate="2000"><span class="percent"></span>
+												</span>
+												<span class="chart-sub-title">Employee</span>
+												</li>
+												<li>
+												<span class="epie-chart" data-percent="50" data-barcolor="#00acc1" data-tcolor="#e0e0e0" data-scalecolor="#e0e0e0" data-linecap="butt" data-linewidth="3" data-size="80" data-animate="2000"><span class="percent"></span>
+												</span>
+												<span class="chart-sub-title">Team Lead</span>
+												</li>
+												<li>
+												<span class="epie-chart" data-percent="75" data-barcolor="#ffb74d" data-tcolor="#e0e0e0" data-scalecolor="#e0e0e0" data-linecap="butt" data-linewidth="3" data-size="80" data-animate="2000"><span class="percent"></span>
+												</span>
+												<span class="chart-sub-title">Manager</span>
+												</li>
+												<li>
+												<span class="epie-chart" data-percent="100" data-barcolor="#4caf50" data-tcolor="#e0e0e0" data-scalecolor="#e0e0e0" data-linecap="butt" data-linewidth="3" data-size="80" data-animate="2000"><span class="percent"></span>
+												</span>
+												<span class="chart-sub-title">HR</span>
+												</li>
+											</ul>
+										</div>
+	
+										
+	
+<!--Footer Start Here -->
+<footer class="footer-container">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-6 col-sm-6">
+                <div class="footer-left">
+                    <span>&copy; 2015 <a href="http://themeforest.net/user/westilian">westilian</a></span>
+                </div>
+            </div>
+            <div class="col-md-6 col-sm-6">
+                <div class="footer-right">
+                    <span class="footer-meta">Crafted with&nbsp;<i class="fa fa-heart"></i>&nbsp;by&nbsp;<a href="http://themeforest.net/user/westilian">westilian</a></span>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+</div>
+</div>
+
+<script src="js/jquery-1.11.2.min.js"></script>
+<script src="js/jquery-migrate-1.2.1.min.js"></script>
+<script src="js/jRespond.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/nav-accordion.js"></script>
+<script src="js/hoverintent.js"></script>
+<script src="js/waves.js"></script>
+<script src="js/switchery.js"></script>
+<script src="js/jquery.loadmask.js"></script>
+<script src="js/icheck.js"></script>
+<script src="js/select2.js"></script>
+<script src="js/bootstrap-filestyle.js"></script>
+<script src="js/bootbox.js"></script>
+<script src="js/animation.js"></script>
+<script src="js/colorpicker.js"></script>
+<script src="js/bootstrap-datepicker.js"></script>
+<script src="js/sweetalert.js"></script>
+<script src="js/moment.js"></script>
+<script src="js/calendar/fullcalendar.js"></script>
+<!--CHARTS-->
+<script src="js/chart/sparkline/jquery.sparkline.js"></script>
+<script src="js/chart/easypie/jquery.easypiechart.min.js"></script>
+<script src="js/chart/flot/excanvas.min.js"></script>
+<script src="js/chart/flot/jquery.flot.min.js"></script>
+<script src="js/chart/flot/curvedLines.js"></script>
+<script src="js/chart/flot/jquery.flot.time.min.js"></script>
+<script src="js/chart/flot/jquery.flot.stack.min.js"></script>
+<script src="js/chart/flot/jquery.flot.axislabels.js"></script>
+<script src="js/chart/flot/jquery.flot.resize.min.js"></script>
+<script src="js/chart/flot/jquery.flot.tooltip.min.js"></script>
+<script src="js/chart/flot/jquery.flot.spline.js"></script>
+<script src="js/chart/flot/jquery.flot.pie.min.js"></script>
+<script src="js/chart.init.js"></script>
+<script src="js/smart-resize.js"></script>
+<script src="js/layout.init.js"></script>
+<script src="js/matmix.init.js"></script>
+<script src="js/retina.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<script src="Controllers/indexempCtrl.js"></script>
+</body>
+
+<!-- Mirrored from lab.westilian.com/matmix-admin/list-view/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 12 Apr 2017 08:04:20 GMT -->
+</html>

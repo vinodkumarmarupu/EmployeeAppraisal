@@ -1,0 +1,157 @@
+<html>
+<head>
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js"></script>
+  <script src="js/angular-datatables.min.js"></script>
+  <script src="js/jquery.dataTables.min.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/datatables.bootstrap.css">
+ 
+ 
+ 
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
+  <!-- Ionicons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+  <!-- Theme style -->
+  
+   <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.28/angular.min.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.28//angular-route.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+	
+<script src="js/jquery.min.js"></script>
+<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+
+<link rel="stylesheet" type="text/css" href="css/style.css">
+<script src="js/bootstrap.min.js"></script>
+
+<!-- Bootstrap 3.3.6 -->
+<script src="../bootstrap/js/bootstrap.min.js"></script>
+
+ 
+<script type="text/javascript" src="app.js"></script>
+<script type="text/javascript" src="Controllers/indexCtrl.js"></script>
+<script type="text/javascript" src="Controllers/loginCtrl.js"></script>
+<script type="text/javascript" src="Controllers/homeCtrl.js"></script>
+<script type="text/javascript" src="Controllers/appraisalFormCtrl.js"></script>
+<script type="text/javascript" src="Controllers/appraisalupdateByHrCtrl.js"></script>
+<script type="text/javascript" src="Controllers/appraisalupdateByManagerCtrl.js"></script>
+<script type="text/javascript" src="Controllers/appraisalupdateByTlCtrl.js"></script>
+<script type="text/javascript" src="Controllers/empHRlistCtrl.js"></script>
+<script type="text/javascript" src="Controllers/empMGRlistCtrl.js"></script>
+<script type="text/javascript" src="Controllers/empRegistrationCtrl.js"></script>
+<script type="text/javascript" src="Controllers/empTLlistCtrl.js"></script>
+<script type="text/javascript" src="Controllers/hrAppraisallistCtrl.js"></script>
+<script type="text/javascript" src="Controllers/managerAppraisallistCtrl.js"></script>
+<script type="text/javascript" src="Controllers/tlAppraisallistCtrl.js"></script>
+<script type="text/javascript" src="Controllers/updateempprofilebyhrCtrl.js"></script>
+<script type="text/javascript" src="Controllers/updateempprofileCtrl.js"></script>
+<head>
+<body class="hold-transition skin-blue sidebar-mini">
+<div ng-app="myApp" ng-controller="indexCtrl">
+
+<!--<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand">Appraisal Form</a>
+    </div>
+    <ul class="nav navbar-nav">
+     <button class="btn btn-danger navbar-btn" ng-click="homePage()">Home</button>
+     <button class="btn btn-danger navbar-btn" ng-click="update()">UpdateProfile</button>
+     <button class="btn btn-danger navbar-btn" ng-click="APForm()">AppraisalForm</button>
+	  <button class="btn btn-danger navbar-btn" ng-hide="tleplist" ng-click="emp1()">EmployeeListTL</button>
+     <button class="btn btn-danger navbar-btn"  ng-hide="h1" ng-click="ap1()">AppraisalListTL</button>
+     <button class="btn btn-danger navbar-btn"  ng-hide="h2" ng-click="emp2()">EmployeeListMG</button>
+     <button class="btn btn-danger navbar-btn"  ng-hide="h3" ng-click="ap2()">AppraisalListMG</button>
+     <button class="btn btn-danger navbar-btn" ng-hide="h4" ng-click="emp3()">EmployeeListHR</button>
+     <button class="btn btn-danger navbar-btn" ng-hide="h5" ng-click="ap3()">AppraisalListHR</button>
+	  <button class="btn btn-danger navbar-btn"  ng-click="logout()">Logout</button>
+    
+    </ul>
+  </div>
+</nav>
+<nav class="navbar navbar-inverse navbar-fixed-bottom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand">Miracle Software Systems</a>
+    </div>
+    
+  </div>
+</nav>-->
+<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#menu-toggle" id="menu-toggle"><span class="glyphicon glyphicon-list" aria-hidden="true"></span></a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="#"><span class="glyphicon glyphicon-home" aria-hidden="true"></span> Home</a></li>
+				<li><a href="#"><span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span> Messages </a></li>
+             	<li><a href="#"><span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span> Help</a></li>
+                <li><a href="#"><span class="glyphicon glyphicon-off" aria-hidden="true"></span> Log Out</a></li>
+            </ul>
+            <form class="navbar-form navbar-right" action="#" method="GET">
+           		
+                    	
+                  	</div>
+				</div>
+            </form>
+        </div>
+    </div>
+</nav>
+
+<div id="wrapper" class="toggled">
+    <div class="container-fluid">
+        <!-- Sidebar -->
+        <div id="sidebar-wrapper">
+            <ul class="sidebar-nav">
+              	<li class="sidebar-brand">
+                    <br>
+                </li>
+ <li class="active"><a ng-click="homePage()" ><i class="fa fa-link"></i> <span>Home</span></a></li>
+		<li class="active"><a ng-click="update()" ><i class="fa fa-link"></i> <span>UpdateProfile</span></a></li>
+		<li class="active"><a ng-click="APForm()" ><i class="fa fa-link"></i> <span>AppraisalForm</span></a></li>
+		<li class="active"><a ng-click="emp1()" ng-hide="tleplist"><i class="fa fa-link"></i> <span>EmployeeListTL</span></a></li>
+		<li class="active"><a ng-click="ap1()" ng-hide="h1" ><i class="fa fa-link"></i> <span>AppraisalListTL</span></a></li>
+		<li class="active"><a ng-click="emp2()" ng-hide="h2"><i class="fa fa-link"></i> <span>EmployeeListMG</span></a></li>
+		<li class="active"><a ng-click="ap2()" ng-hide="h3"><i class="fa fa-link"></i> <span>AppraisalListMG</span></a></li>
+		<li class="active"><a ng-click="emp3()" ng-hide="h4"><i class="fa fa-link"></i> <span>EmployeeListHR</span></a></li>
+	   <li class="active"><a ng-click="ap3()" ng-hide="h5"><i class="fa fa-link"></i> <span>AppraisalListHR</span></a></li>
+	   <li class="active"><a ng-click="logout()" ><i class="fa fa-link"></i> <span>Logout</span></a></li>
+            </ul>
+        </div>
+        <!-- /#sidebar-wrapper -->
+
+        <!-- Page Content -->
+        <div id="page-content-wrapper">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-12">
+                      <br>
+					  <ng-view></ng-view>
+                      <h1>Your Title</h1>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-12">
+						
+                </div>
+            </div>
+        </div>
+        <!-- /#page-content-wrapper -->
+    </div>
+</div>
+<!-- /#wrapper -->
+
+
+</div>
+
+
+</body>
+</html>

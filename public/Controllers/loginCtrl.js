@@ -1,10 +1,11 @@
 
- var loginCtrl=function ($http,$rootScope,$location,studentSessionFactory){
 
+function loginCtrl($rootScope,$location,httpFactory){
 var vm=this;
+
 vm.login=function(){
-alert("hi");
-studentSessionFactory.getSessions(vm.email,vm.password).then (function(response){
+
+httpFactory.loginApi(vm.email,vm.password).then (function(response){
 
 vm.loginData=response.data;
 localStorage.setItem('role',response.data.role);
@@ -38,4 +39,4 @@ console.log("nothing");
 }
 }
 angular.module('myApp')
- .controller('loginCtrl',loginCtrl);
+.controller('loginCtrl',loginCtrl);

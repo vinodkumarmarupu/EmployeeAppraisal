@@ -1,10 +1,8 @@
-angular.module('myApp', [])
- 
-.controller('indexhrCtrl', indexhrCtrl)
-function indexhrCtrl($scope,$http,$rootScope,$location){
-//alert("hi");
 
-$scope.yourmail=localStorage.getItem('email');
+function indexhrCtrl($location,httpFactory){
+alert("hi");
+var vm=this;
+vm.yourmail=localStorage.getItem('email');
 //requesting Apprisal Length
 	var requestingApprisalJSON={
 
@@ -14,9 +12,9 @@ $scope.yourmail=localStorage.getItem('email');
 
 	};
 
-	$http.post('http://localhost:3000/empListApi',requestingApprisalJSON).then(function(response ){
+	httpFactory.empListApi(requestingApprisalJSON).then(function(response ){
 
-	$scope.requestingApprisalLength=response.data.length;
+	vm.requestingApprisalLength=response.data.length;
 
 	})
 	
@@ -29,9 +27,9 @@ $scope.yourmail=localStorage.getItem('email');
 
 	};
 
-	$http.post('http://localhost:3000/empListApi',requestingApprisalJSON).then(function(response ){
+	httpFactory.empListApi(requestingApprisalJSON).then(function(response ){
     console.log(response.data.length);
-	$scope.requestedApprisalLength=response.data.length;
+	vm.requestedApprisalLength=response.data.length;
 
 	})
 //apprisalListHR
@@ -42,22 +40,25 @@ $scope.yourmail=localStorage.getItem('email');
 	}
 
 
-	$http.post("http://localhost:3000/getApprisalBasedOnId",apprisalListHR).then (function(response){
+	httpFactory.getAppraisalApi(apprisalListHR).then (function(response){
 
 	if(response.data.success=="noting was found"){
 
-	$scope.result="Noting Was found!!!";
+	vm.result="Noting Was found!!!";
 	
-	$scope.apprisalListHRLength=0;
+	vm.apprisalListHRLength=0;
 	}
 	else{
-	$scope.apprisalListHRLength=response.data.length;
+	vm.apprisalListHRLength=response.data.length;
 	
 	}
 	})
 //Employee List
-$http.get("http://localhost:3000/empListApi").then(function(response){
-$scope.result=response.data;
+httpFactory.empListApi().then(function(response){
+vm.result=response.data;
 	console.log(response.data);
 	})
 }
+angular.module('myApp')
+ 
+.controller('indexhrCtrl', indexhrCtrl);

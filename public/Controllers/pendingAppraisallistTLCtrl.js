@@ -1,6 +1,5 @@
-	angular.module('myApp',[])
-	.controller('pendingAppraisallistTLCtrl',pendingAppraisallistTLCtrl)
-	function pendingAppraisallistTLCtrl($scope,$http){
+
+var pendingAppraisallistTLCtrl=	function (httpFactory){
 
     var vm=this;
 	vm.edit=function(id){
@@ -19,7 +18,7 @@
 	}
 
 
-	$http.post("http://localhost:3000/getApprisalBasedOnId",apprisalListTL).then (function(response){
+	httpFactory.getAppraisalApi(apprisalListTL).then (function(response){
 
 	if(response.data.success=="noting was found"){
 
@@ -31,3 +30,5 @@
 	}
 	})
 	}
+	angular.module('myApp')
+	.controller('pendingAppraisallistTLCtrl',pendingAppraisallistTLCtrl);

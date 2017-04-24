@@ -1,11 +1,10 @@
-angular.module('myApp',[])
-.controller('appraisalFormtlCtrl', appraisalFormtlCtrl)
 
- function appraisalFormtlCtrl(vm,$http,$location,$rootScope){
+
+var appraisalFormtlCtrl= function ($location,$rootScope,httpFactory){
 console.log("id" +localStorage.getItem('empId'));
 var vm=this;
 
-$http.get("http://localhost:3000/getEmpApprisalBasedOnId?_id="+localStorage.getItem('empId')).then(function(response){
+httpFactory.getempApi(localStorage.getItem('empId')).then(function(response){
 console.log(JSON.stringify(response.data));
 
 if(response.data.success=="noting was found"){
@@ -58,7 +57,7 @@ var insertAppraisalJson=
 		
 	}
 console.log(JSON.stringify(insertAppraisalJson));
-$http.post("http://localhost:3000/updateApprisal",insertAppraisalJson).then (function(response){
+httpFactory.updateAppraisalApi(insertAppraisalJson).then (function(response){
 
 console.log(JSON.stringify(response.data));
 
@@ -112,7 +111,7 @@ var insertAppraisalJson=
 		
 	}
 console.log(JSON.stringify(insertAppraisalJson));
-$http.post("http://localhost:3000/updateApprisal",insertAppraisalJson).then (function(response){
+httpFactory.updateAppraisalApi(insertAppraisalJson).then (function(response){
 
 console.log(JSON.stringify(response.data));
 
@@ -134,3 +133,5 @@ window.location.assign('/TLhome');
 })
 }
 }
+angular.module('myApp')
+.controller('appraisalFormtlCtrl', appraisalFormtlCtrl);

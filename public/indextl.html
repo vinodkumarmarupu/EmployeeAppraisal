@@ -39,7 +39,7 @@
             <li><a href="#" class="waves-effect"><span class="nav-icon"><i class="fa fa-home"></i></span><span class="nav-label">Home</span></a>
                 
             </li>
-           <li><a href="#"><span class="nav-icon"><i class="fa fa-table"></i></span><span class="nav-label">Employee List</span></a>
+           <li><a href="empListViewForTl.html"><span class="nav-icon"><i class="fa fa-table"></i></span><span class="nav-label">Employee List</span></a>
                
             </li>
 			 <li><a href="appraisalFormtl.html" class="waves-effect"><span class="nav-icon"><i class="fa fa-align-justify"></i></span><span class="nav-label">Self Appraisal Form</span></a>
@@ -88,7 +88,7 @@
                         <ul>
                             <li class="dropdown">
                                 <a data-toggle="dropdown" href="#" class="clearfix dropdown-toggle waves-effect waves-block waves-classic">
-                                    <span class="user-info">username <cite>{{yourmail}}</cite></span>
+                                    <span class="user-info">username <cite>{{vm.yourmail}}</cite></span>
                                     <span class="user-thumb"><img src="images/avatar/jaman.jpg" alt="image"></span>
                                 </a>
                                 <ul role="menu" class="dropdown-menu fadeInUp">
@@ -139,7 +139,7 @@
                     <span><i class="ico-users"></i></span>
                 </a>
                 <div class="w-meta-info">
-                    <span class="w-meta-value number-animate" data-animation-duration="1500">{{pendingApprisalListTLLength}}</span>
+                    <span class="w-meta-value number-animate" data-animation-duration="1500">{{vm.pendingApprisalListTLLength}}</span>
                     <span class="w-meta-title"></span>
                   
                 </div>
@@ -153,7 +153,7 @@
                     <span><i class="ico-users"></i></span>
                 </a>
                 <div class="w-meta-info">
-                    <span class="w-meta-value number-animate" data-animation-duration="1500">{{updatedApprisalListTLLength}}</span>
+                    <span class="w-meta-value number-animate" data-animation-duration="1500">{{vm.updatedApprisalListTLLength}}</span>
                     <span class="w-meta-title"></span>
                    
                 </div>
@@ -345,6 +345,8 @@
 <script src="js/matmix.init.js"></script>
 <script src="js/retina.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<script src="app.js"></script>
+<script src="Services/service.js"></script>
 <script src="Controllers/indextlCtrl.js"></script>
 </body>
 

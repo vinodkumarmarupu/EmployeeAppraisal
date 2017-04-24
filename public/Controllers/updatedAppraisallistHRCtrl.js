@@ -1,7 +1,5 @@
 
-	angular.module('myApp',[])
-	.controller('updatedAppraisallistHRCtrl',updatedAppraisallistHRCtrl)
-	function updatedAppraisallistHRCtrl($http){
+var updatedAppraisallistHRCtrl=	function (httpFactory){
 
 	var vm=this;
 
@@ -11,7 +9,7 @@
 	}
 
 
-	$http.post("http://localhost:3000/getApprisalBasedOnId",apprisalListHR).then (function(response){
+	httpFactory.getAppraisalApi(apprisalListHR).then (function(response){
 
 	if(response.data.success=="noting was found"){
 
@@ -25,3 +23,6 @@
 	}
 	})
 }
+
+	angular.module('myApp')
+	.controller('updatedAppraisallistHRCtrl',updatedAppraisallistHRCtrl);

@@ -1,6 +1,5 @@
-	angular.module('myApp',[])
-	.controller('pendingAppraisallistMGRCtrl', pendingAppraisallistMGRCtrl)
-	function pendingAppraisallistMGRCtrl($scope,$http){
+
+var pendingAppraisallistMGRCtrl=	function (httpFactory){
 var vm=this;
 
 	vm.edit=function(id){
@@ -18,7 +17,7 @@ var vm=this;
 	}
 
 
-	$http.post("http://localhost:3000/getApprisalBasedOnId",apprisalListMGR).then (function(response){
+httpFactory.getAppraisalApi(apprisalListMGR).then (function(response){
 
 	if(response.data.success=="noting was found"){
 
@@ -32,3 +31,5 @@ var vm=this;
 	}
 	})
 	}
+		angular.module('myApp')
+	.controller('pendingAppraisallistMGRCtrl', pendingAppraisallistMGRCtrl);

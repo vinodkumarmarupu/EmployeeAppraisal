@@ -1,7 +1,5 @@
 
-	angular.module('myApp',[])
-	.controller('requestingAppraisallistHRCtrl',requestingAppraisallistHRCtrl)
-	function requestingAppraisallistHRCtrl($scope,$http){
+	var requestingAppraisallistHRCtrl=function (httpFactory){
      var vm=this;
 	var requestingApprisalJSON={
 
@@ -11,7 +9,7 @@
 
 	};
 
-	$http.post('http://localhost:3000/empListApi',requestingApprisalJSON).then(function(response ){
+	httpFactory.empListApi(requestingApprisalJSON).then(function(response ){
 
 	vm.result=response.data;
 
@@ -19,7 +17,7 @@
 
 	vm.edit=function(id){
 
-$http.get("http://localhost:3000/getEmpBasedOnId?_id="+id).then(function(response){
+httpFactory.EmpBasedOnIdapi(id).then(function(response){
 console.log(JSON.stringify(response.data));
  
  
@@ -36,7 +34,7 @@ console.log(JSON.stringify(response.data));
 		"HRname":response.data[0].hrname,
 		"HRemail":response.data[0].hrmail,
 		"status":"0",
-		"empsubmitted":"0",
+		"EmpSubmitted":"0",
 		"TLSubmitted":"0",
 		"managerSubmitted":"0",
 		"HRSubmitted":"0"
@@ -44,7 +42,7 @@ console.log(JSON.stringify(response.data));
 		
 	}
 console.log(JSON.stringify(insertAppraisalJson));
-$http.post("http://localhost:3000/createApprisalForm",insertAppraisalJson).then (function(response){
+httpFactory.createApprisalFormApi(insertAppraisalJson).then (function(response){
 
 console.log(JSON.stringify(response.data));
 
@@ -52,14 +50,14 @@ console.log(JSON.stringify(response.data));
 if(response.data.error=="error"){
 
 vm.result="Email Already Exists!!!";
-console.log($scope.result);
+
 alert("Some Thing Went Wrong!!!");
 
 
 }
 else{
 vm.result=response.data;
-console.log(JSON.stringify($scope.result));
+console.log(JSON.stringify(vm.result));
 vm.apprisal="Success";
 
 
@@ -72,7 +70,7 @@ var updateEmpApprisalJson=
 		
 	}
 
-$http.post("http://localhost:3000/empUpdateProfile",updateEmpApprisalJson).then (function(response){
+httpFactory.empUpdateProfileApi(updateEmpApprisalJson).then (function(response){
 
 console.log(JSON.stringify(response.data));
 
@@ -84,3 +82,6 @@ window.location.assign("/HRhome");
 })
 }
 }
+
+	angular.module('myApp')
+	.controller('requestingAppraisallistHRCtrl',requestingAppraisallistHRCtrl);

@@ -1,9 +1,7 @@
-angular.module('myApp', [])
- 
-.controller('indexmanagerCtrl',indexmanagerCtrl)
- function indexmanagerCtrl($scope,$http,$rootScope,$location){
 
-$scope.yourmail=localStorage.getItem('email');
+var indexmanagerCtrl=function ($rootScope,$location,httpFactory){
+var vm=this;
+vm.yourmail=localStorage.getItem('email');
 
 //pending apprisalListTL
 	var pendingApprisalListManager={
@@ -13,16 +11,16 @@ $scope.yourmail=localStorage.getItem('email');
 	}
 
 
-	$http.post("http://localhost:3000/getApprisalBasedOnId",pendingApprisalListManager).then (function(response){
+	httpFactory.getAppraisalApi(pendingApprisalListManager).then (function(response){
 
 	if(response.data.success=="noting was found"){
 
-	$scope.result="Noting Was found!!!";
+	vm.result="Noting Was found!!!";
 	
-	$scope.apprisalListManagerLength=0;
+	vm.apprisalListManagerLength=0;
 	}
 	else{
-	$scope.apprisalListManagerLength=response.data.length;
+	vm.apprisalListManagerLength=response.data.length;
 	
 	}
 	})
@@ -35,17 +33,21 @@ $scope.yourmail=localStorage.getItem('email');
 	}
 
 
-	$http.post("http://localhost:3000/getApprisalBasedOnId",updatedApprisalListTL).then (function(response){
+	httpFactory.getAppraisalApi(updatedApprisalListTL).then (function(response){
 
 	if(response.data.success=="noting was found"){
 
-	$scope.result="Noting Was found!!!";
+	vm.result="Noting Was found!!!";
 	
-	$scope.updatedApprisalListManagerLength=0;
+	vm.updatedApprisalListManagerLength=0;
 	}
 	else{
-	$scope.updatedApprisalListManagerLength=response.data.length;
+	vm.updatedApprisalListManagerLength=response.data.length;
 	
 	}
 	})
 }
+
+angular.module('myApp')
+ 
+.controller('indexmanagerCtrl',indexmanagerCtrl);

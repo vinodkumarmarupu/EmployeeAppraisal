@@ -9,7 +9,7 @@ app.use(bodyparser.json());
 app.use(bodyparser.urlencoded({ extended: true }));
 
 
-mongoose.connect('mongodb://172.17.13.222:27017/AppraisalDB',function(err){
+mongoose.connect('mongodb://localhost:27017/AppraisalDB',function(err){
 	if(err){
 		console.log("DB Error"+err);
 	}else{

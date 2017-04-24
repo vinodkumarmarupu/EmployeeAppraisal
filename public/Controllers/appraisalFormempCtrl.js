@@ -1,18 +1,17 @@
-angular.module('myApp',[])
-.controller('appraisalFormempCtrl',appraisalFormempCtrl)
 
-function appraisalFormempCtrl($http,$location,$rootScope){
+
+function appraisalFormempCtrl($location,$rootScope,httpFactory){
 	var vm=this;
-$http.get("http://localhost:3000/getEmpApprisalBasedOnId?_id="+localStorage.getItem('email')).then(function(response){
+httpFactory.getempApi(localStorage.getItem('email')).then(function(response){
 console.log(JSON.stringify(response.data));
 
 if(response.data.success=="noting was found"){
 
 }else{
-   vm.apemail=response.data[0]._id;
-   vm.apname=response.data[0].name;
-   vm.apdesignation=response.data[0].designation;
-  vm.apmonth=response.data[0].month,
+ vm.apemail=response.data[0]._id;
+ vm.apname=response.data[0].name;
+ vm.apdesignation=response.data[0].designation;
+ vm.apmonth=response.data[0].month,
  vm.aptimeInposition=response.data[0].TimeInPosition,
  vm.aptrDetails=response.data[0].TrainingDetails,
  vm.approjects=response.data[0].Projects,
@@ -52,7 +51,7 @@ var insertAppraisalJson=
 		"HRSubmitted":"0"	
 	}
 console.log(JSON.stringify(insertAppraisalJson));
-$http.post("http://localhost:3000/updateApprisal",insertAppraisalJson).then (function(response){
+httpFactory.updateAppraisalApi(insertAppraisalJson).then (function(response){
 
 console.log(JSON.stringify(response.data));
 
@@ -60,6 +59,7 @@ console.log(JSON.stringify(response.data));
 if(response.data.error=="error"){
 
 vm.result="Email Already Exists!!!";
+
 console.log(vm.result);
 alert("Some Thing Went Wrong!!!");
 
@@ -108,7 +108,7 @@ var insertAppraisalJson=
 		
 	}
 console.log(JSON.stringify(insertAppraisalJson));
-$http.post("http://localhost:3000/updateApprisal",insertAppraisalJson).then (function(response){
+httpFactory.updateAppraisalApi(insertAppraisalJson).then (function(response){
 
 console.log(JSON.stringify(response.data));
 
@@ -127,7 +127,7 @@ var updateEmpJson=
         "_id":localStorage.getItem('email'),
 	    "empAparisalStatus":"1"
 		}
-$http.post("http://localhost:3000/empUpdateProfile",updateEmpJson).then (function(response){
+httpFactory.empUpdateProfileApi(updateEmpJson).then (function(response){
 console.log(JSON.stringify(response.data));
 vm.result=response.data;
 })
@@ -141,3 +141,6 @@ window.location.assign("/EMPhome");
 })
 }
 }
+
+angular.module('myApp')
+.controller('appraisalFormempCtrl',appraisalFormempCtrl);

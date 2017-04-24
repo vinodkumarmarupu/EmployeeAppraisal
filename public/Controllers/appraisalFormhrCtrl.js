@@ -1,8 +1,7 @@
-angular.module('myApp',[])
-.controller('appraisalFormhrCtrl', appraisalFormhrCtrl)
-function appraisalFormhrCtrl($http,$location,$rootScope){
+
+var appraisalFormhrCtrl=function ($location,$rootScope,httpFactory){
 var vm=this
-$http.get("http://localhost:3000/getEmpApprisalBasedOnId?_id="+localStorage.getItem('empId')).then(function(response){
+httpFactory.getempApi(localStorage.getItem('empId')).then(function(response){
 console.log(JSON.stringify(response.data));
 
 if(response.data.success=="noting was found"){
@@ -59,7 +58,7 @@ var insertAppraisalJson=
 		"HRrating" :vm.hrapratings,
         "HRcomment":vm.hrapcomments,
 		"status":"2",
-		"empsubmitted":"1",
+		"EmpSubmitted":"1",
 		"TLSubmitted":"1",
 		"managerSubmitted":"1",
 		"HRSubmitted":"0"
@@ -67,7 +66,7 @@ var insertAppraisalJson=
 		
 	}
 console.log(JSON.stringify(insertAppraisalJson));
-$http.post("http://localhost:3000/updateApprisal",insertAppraisalJson).then (function(response){
+httpFactory.updateAppraisalApi(insertAppraisalJson).then (function(response){
 
 console.log(JSON.stringify(response.data));
 
@@ -121,13 +120,13 @@ var insertAppraisalJson=
 		"HRrating" :vm.hrapratings,
         "HRcomment":vm.hrapcomments,
 		"status":"3",
-		"empsubmitted":"1",
+		"EmpSubmitted":"1",
 		"TLSubmitted":"1",
 		"managerSubmitted":"1",
 		"HRSubmitted":"1"		
 	}
 console.log(JSON.stringify(insertAppraisalJson));
-$http.post("http://localhost:3000/updateApprisal",insertAppraisalJson).then (function(response){
+httpFactory.updateAppraisalApi(insertAppraisalJson).then (function(response){
 
 console.log(JSON.stringify(response.data));
 
@@ -140,8 +139,12 @@ else{
 vm.result=response.data;
 console.log(JSON.stringify(vm.result));
 vm.apprisal="Success";
+window.location.assign("/HRhome");
 //$location.path("/login");
 }
 })
 }
 }
+
+angular.module('myApp')
+.controller('appraisalFormhrCtrl', appraisalFormhrCtrl);

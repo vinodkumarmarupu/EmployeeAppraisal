@@ -225,14 +225,14 @@
 										<th>
 											Designation
 										</th>
-										<th>
+										<th ng-hide="true">
 											Phone Number
 										</th>
 										
 									</tr>
 									</thead>
 									
-                                    <tbody ng-repeat="list in result">
+                                    <tbody ng-repeat="list in vm.result1">
                                     <tr>
                                         <td>
                                             {{list.fname}}
@@ -243,9 +243,7 @@
                                         <td>
                                             {{list.designation}}
                                         </td>
-                                        <td>
-                                           {{list.phonenumber}}
-                                        </td>
+                                        
                                      <td class="edit"><button class="edit-item-btn" ng-click="vm.edit(list._id)">Edit</button></td>
                                     </tr>
                                    
@@ -263,7 +261,7 @@
 			</div>
 		</div>
 		
-		<div class="main-container">
+		 <div class="main-container" id="empList" style="display:none;">
 			<div class="container-fluid">
 				<div class="page-breadcrumb">
 					<div class="row">
@@ -305,7 +303,7 @@
 									</tr>
 									</thead>
 									
-                                    <tbody ng-repeat="list1 in result1">
+                                    <tbody ng-repeat="list1 in vm.result">
                                     <tr>
                                         <td>
                                             {{list1.fname}}
@@ -334,7 +332,7 @@
 					</div>
 				</div>
 			</div>
-		</div>
+		</div> 
 		
 		<!--Footer Start Here -->
 		<footer class="footer-container">
@@ -399,6 +397,8 @@
 	<!--High Resolution Ready-->
 	<script src="js/retina.min.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+	<script src="app.js"></script>
+<script src="Services/service.js"></script>
 	<script src="Controllers/empMGRlistCtrl.js"></script>
 	</body>
 	

@@ -1,8 +1,8 @@
 
-angular.module('myApp',[])
-.controller('updateprofilebyhrCtrl',updateprofilebyhrCtrl)
- function updateprofilebyhrCtrl(vm,$http,$location,$rootScope){
-$http.get("http://localhost:3000/getEmpBasedOnId?_id="+localStorage.getItem('empId')).then(function(response){
+
+ var updateprofilebyhrCtrl=function (httpFactory){
+	 var vm=this;
+httpFactory.EmpBasedOnIdapi(localStorage.getItem('empId')).then(function(response){
 console.log(JSON.stringify(response.data));
  vm.huemail=response.data[0]._id,
  vm.hufname=response.data[0].fname,
@@ -26,7 +26,7 @@ var updateEmpJson=
 		"date":vm.hudate
 	}
 
-$http.post("http://localhost:3000/empUpdateProfile",updateEmpJson).then (function(response){
+httpFactory.empUpdateProfileApi(updateEmpJson).then (function(response){
 
 console.log(JSON.stringify(response.data));
 
@@ -37,3 +37,5 @@ window.location.assign("/HRhome");
 }
 
 }
+angular.module('myApp')
+.controller('updateprofilebyhrCtrl',updateprofilebyhrCtrl);

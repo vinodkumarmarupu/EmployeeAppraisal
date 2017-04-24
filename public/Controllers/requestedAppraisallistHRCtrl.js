@@ -1,7 +1,5 @@
 
-	angular.module('myApp',[])
-	.controller('requestedAppraisallistHRCtrl',requestedAppraisallistHRCtrl)
-	function requestedAppraisallistHRCtrl($scope,$http){
+var requestedAppraisallistHRCtrl=function (httpFactory){
     var vm=this;
 
 
@@ -13,9 +11,13 @@
 
 	};
 
-	$http.post('http://localhost:3000/empListApi',requestingApprisalJSON).then(function(response ){
+	httpFactory.empListApi(requestingApprisalJSON).then(function(response ){
     console.log(response.data.length);
 	vm.result=response.data;
 
 	})	
 }
+
+
+	angular.module('myApp')
+	.controller('requestedAppraisallistHRCtrl',requestedAppraisallistHRCtrl);

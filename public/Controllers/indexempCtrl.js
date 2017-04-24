@@ -1,42 +1,46 @@
-angular.module('myApp', [])
- 
-.controller('indexempCtrl', indexempCtrl)
- function indexempCtrl($scope,$http,$rootScope,$location){
-//alert(localStorage.getItem("email"));
 
-$http.get("http://localhost:3000/getEmpBasedOnId?_id="+localStorage.getItem("email")).then(function(response){
+ var indexempCtrl=function ($scope,$location,httpFactory){
+alert(localStorage.getItem("email"));
+var vm=this;
+vm.email=localStorage.getItem("email");
+httpFactory.EmpBasedOnIdapi(vm.email).then(function(response){
 
 if(response.data[0].status=="1" && response.data[0].HRAparisalStatus=="1" && response.data[0].empAparisalStatus=="0"){
-//alert("0");
-$scope.value=false;
+alert("0");
+vm.value=false;
 
 }else{
-$scope.value=true;
+vm.value=true;
 }
 });
-$scope.yourmail=localStorage.getItem('email');
+vm.yourmail=localStorage.getItem('email');
 
-$http.get("http://localhost:3000/getEmpApprisalBasedOnId?_id="+localStorage.getItem("email")).then(function(response){
 
+httpFactory.getEmpAppraisalApi(vm.yourmail).then(function(response){
+vm.empvalue=0;
 console.log(response.data[0].status);
 
 if(response.data[0].status=="0" && response.data[0].EmpSubmitted=="0"){
 	
-	$scope.empvalue=0;
+	vm.empvalue=0;
+	alert(vm.empvalue);
 	
 }else if(response.data[0].status=="0" && response.data[0].EmpSubmitted=="1"){
-    $scope.empvalue=25;
+    vm.empvalue=25;
 
 }else if(response.data[0].status=="1"){
-$scope.empvalue=50;
+vm.empvalue=50;
 	
 }else if(response.data[0].status=="2"){
-$scope.empvalue=75;
+vm.empvalue=75;
 	
 }else if(response.data[0].status=="3"){
-$scope.empvalue=100;
+vm.empvalue=100;
 	
 }
 console.log(response.data);
 })
 }
+angular.module('myApp')
+ 
+.controller('indexempCtrl', indexempCtrl);

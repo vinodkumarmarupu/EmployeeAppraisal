@@ -51,7 +51,7 @@
                     </li> -->
                 </ul>
             </li>
-			 <li><a href="appraisalForm.html" class="waves-effect"><span class="nav-icon"><i class="fa fa-align-justify"></i></span><span class="nav-label">Self Appraisal Form</span></a>
+			 <li><a href="appraisalFormhr.html" class="waves-effect"><span class="nav-icon"><i class="fa fa-align-justify"></i></span><span class="nav-label">Self Appraisal Form</span></a>
                 
             </li>
 					
@@ -227,17 +227,17 @@
                                             </div>
                                         </div>
                                             <div class="form-group">
-                                            <label class="col-md-4 control-label" for="vm.ccomment">DifficultyInterest:</label>
+                                            <label class="col-md-4 control-label" for="ccomment">DifficultyInterest:</label>
 											
                                             <div class="col-md-8">
                                                 <textarea class="form-control" ng-model="vm.hrapdfInterest" placeholder="DifficultyInterest" id="ccomment" name="comment" required></textarea>
                                             </div>
                                         </div>
                                              <div class="form-group">
-                                            <label class="col-md-4 control-label" for="vm.ccomment">Achievements:</label>
+                                            <label class="col-md-4 control-label" for="ccomment">Achievements:</label>
 											
                                             <div class="col-md-8">
-                                                <textarea class="form-control" ng-model="hrapachievements" placeholder="Achievements" id="ccomment" name="comment" required></textarea>
+                                                <textarea class="form-control" ng-model="vm.hrapachievements" placeholder="Achievements" id="ccomment" name="comment" required></textarea>
                                             </div>
                                         </div>
                                     
@@ -291,7 +291,7 @@
                                             <label class="col-md-4 control-label" for="ccomment">HR Comments:</label>
 											
                                             <div class="col-md-8">
-                                                <textarea class="form-control" placeholder="Enter HR comments" id="ccomment" ng-model="vm.hrapcomment" required></textarea>
+                                                <textarea class="form-control" placeholder="Enter HR comments" id="ccomment" ng-model="vm.hrapcomments" required></textarea>
                                             </div>
                                         </div>
                                         <div class="form-group">
@@ -385,6 +385,8 @@
 <!--High Resolution Ready-->
 <script src="js/retina.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<script src="app.js"></script>
+<script src="Services/service.js"></script>
 <script src="Controllers/appraisalFormhrCtrl.js"></script>
 </body>
 

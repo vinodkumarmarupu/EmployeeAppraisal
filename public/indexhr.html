@@ -51,9 +51,9 @@
                     </li> -->
                 </ul>
             </li>
-			 <li><a href="#" class="waves-effect"><span class="nav-icon"><i class="fa fa-align-justify"></i></span><span class="nav-label">Self Appraisal Form</span></a>
+			<!-- <li><a href="appraisalFormhr.html" class="waves-effect"><span class="nav-icon"><i class="fa fa-align-justify"></i></span><span class="nav-label">Employee Appraisal Form</span></a>
                 
-            </li>
+            </li>-->
 					
             
 			<li><a href="#"><span class="nav-icon"><i class="fa fa-table"></i></span><span class="nav-label">Appraisals</span></a>
@@ -100,7 +100,7 @@
                         <ul>
                             <li class="dropdown">
                                 <a data-toggle="dropdown" href="#" class="clearfix dropdown-toggle waves-effect waves-block waves-classic">
-                                    <span class="user-info">username <cite>{{yourmail}}</cite></span>
+                                    <span class="user-info">username <cite>{{vm.yourmail}}</cite></span>
                                     <span class="user-thumb"><img src="images/avatar/jaman.jpg" alt="image"></span>
                                 </a>
                                 <ul role="menu" class="dropdown-menu fadeInUp">
@@ -151,7 +151,7 @@
                     <span><i class="ico-users"></i></span>
                 </a>
                 <div class="w-meta-info">
-                    <span class="w-meta-value number-animate" data-animation-duration="1500">{{apprisalListHRLength}}</span>
+                    <span class="w-meta-value number-animate" data-animation-duration="1500">{{vm.apprisalListHRLength}}</span>
                     <span class="w-meta-title"></span>
                   
                 </div>
@@ -165,7 +165,7 @@
                     <span><i class="ico-users"></i></span>
                 </a>
                 <div class="w-meta-info">
-                    <span class="w-meta-value number-animate" data-animation-duration="1500">{{requestingApprisalLength}}</span>
+                    <span class="w-meta-value number-animate" data-animation-duration="1500">{{vm.requestingApprisalLength}}</span>
                     <span class="w-meta-title"></span>
                    
                 </div>
@@ -178,7 +178,7 @@
                     <span><i class="ico-users"></i></span>
                 </a>
                 <div class="w-meta-info ">
-                    <span class="w-meta-value number-animate"  data-animation-duration="1500">{{requestedApprisalLength}}</span>
+                    <span class="w-meta-value number-animate"  data-animation-duration="1500">{{vm.requestedApprisalLength}}</span>
                     <span class="w-meta-title"></span>
                 </div>
             </div>
@@ -230,7 +230,7 @@
                             </th>
                         </tr>
                         </thead>
-                        <tbody ng-repeat="emplist in result |limitTo:'5'">
+                        <tbody ng-repeat="emplist in vm.result |limitTo:'5'">
                         <tr>
                             <td>
                                <!--  <a href="#">#36542</a> -->
@@ -239,7 +239,7 @@
                             <td>
                                 {{emplist.lname}}
                             </td>
-                             <td class="edit"><span class="edit-item-btn"  ng-style="emplist.status == '0' && {'color' : 'red'} || emplist.status == '1' && {'color' : 'green'}" ng-click="edit(emplist._id)">Edit</span>
+                             <td class="edit"><span class="edit-item-btn"  ng-style="emplist.status == '0' && {'color' : 'red'} || emplist.status == '1' && {'color' : 'green'}" ng-click="vm.edit(emplist._id)">Edit</span>
                             <td>
                                 {{emplist._id}}
                             </td>
@@ -312,6 +312,8 @@
 <script src="js/matmix.init.js"></script>
 <script src="js/retina.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<script src="app.js"></script>
+<script src="Services/service.js"></script>
 <script src="Controllers/indexhrCtrl.js"></script>
 </body>
 

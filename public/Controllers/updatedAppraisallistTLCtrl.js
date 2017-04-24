@@ -1,7 +1,5 @@
 
-	angular.module('myApp',[])
-	.controller('updatedAppraisallistTLCtrl', updatedAppraisallistTLCtrl)
-	function updatedAppraisallistTLCtrl($http){
+var updatedAppraisallistTLCtrl=	function (httpFactory){
     var vm=this;
 	var apprisalListTL={
 	"TLemail":localStorage.getItem("email"),
@@ -9,7 +7,7 @@
 	}
 
 
-	$http.post("http://localhost:3000/getApprisalBasedOnId",apprisalListTL).then (function(response){
+	httpFactory.getAppraisalApi(apprisalListTL).then (function(response){
 
 	if(response.data.success=="noting was found"){
 
@@ -25,3 +23,6 @@
 
 	}
 
+
+	angular.module('myApp')
+	.controller('updatedAppraisallistTLCtrl', updatedAppraisallistTLCtrl);
